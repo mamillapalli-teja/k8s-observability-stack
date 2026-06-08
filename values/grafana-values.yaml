@@ -1,0 +1,10 @@
+# Helm value overrides for Grafana (kube-prometheus-stack)
+grafana:
+  defaultDashboardsEnabled: true
+  # NOTE: set the admin password via a Kubernetes secret in production
+  adminPassword: "change-me-in-production"
+  service:
+    type: ClusterIP
+  persistence:
+    enabled: true
+    size: 5Gi
