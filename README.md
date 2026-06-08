@@ -41,6 +41,7 @@ kubectl port-forward -n monitoring svc/observability-grafana 3000:80
 | `manifests/` | Namespace and Kubernetes manifests |
 | `alerts/` | Prometheus alerting rules (SLO burn-rate) |
 | `scripts/` | Install/setup helpers |
+| `dashboards/` | Grafana dashboard JSON (cluster overview) |
 
 ## License
 
