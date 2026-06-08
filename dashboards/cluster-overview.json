@@ -1,0 +1,28 @@
+{
+  "title": "Cluster Overview",
+  "uid": "cluster-overview",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "30s",
+  "time": { "from": "now-6h", "to": "now" },
+  "panels": [
+    {
+      "id": 1,
+      "title": "CPU Usage by Node",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "targets": [
+        { "expr": "sum(rate(node_cpu_seconds_total{mode!=\"idle\"}[5m])) by (instance)", "legendFormat": "{{instance}}" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Memory Usage by Node",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "targets": [
+        { "expr": "node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes", "legendFormat": "{{instance}}" }
+      ]
+    }
+  ]
+}
